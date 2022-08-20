@@ -59,7 +59,17 @@ direction RL
   n11 --> n12
 end
 
+subgraph T5[" "]
+direction LR 
+  n13["13. Learn BIG O"]
+  n14["14. implementasi data <br/>struktur dan algoritma"]
+  n15["15. mock interview<br/>with friend"]
+  n13 --> n14
+  n14 --> n15
+end
+
 T1 --> T2
 T2 --> T3
 T3 --> T4
+T4 --> T5
 ```
