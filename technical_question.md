@@ -39,7 +39,24 @@ lakukan hal-hal berikut:
 | 40 | 1.099.511.627.776 | 1 trillion | 1 TB |
 
 ## walking through a problem
+### Problem Solving Flowchart
 ```mermaid
-flowchartt TB 
-subgraph
+flowchart TB 
+subgraph S1[" "]
+direction LR 
+  N1(listen <br/> <b>pay very close attention</b><br/>to any information in the problem description.<br/>you probably need it all for an optimal algorithm.)
+  N2(example<br/> <b>debug your example</b><br/>is there any way its a special case? is it big enough?)
+  
+  N1 --> N2
+end
+
+subgraph S2[" "]
+direction RL
+  N3(Brute Force<br/>get a brute force solution as soon as possbile.<br/>dont worry about developing an efficient algorithm yet.<br/>state a naive algorithm and its runtime,<br/> than optimize from there.<br/> dont code yet though!)
+  N4(BUD Optimize<br/>Bottleneck<br/>Unnecessary work<br/>duplicated work)
+
+  N3 --> N4
+end
+
+S1 --> S2
 ```
