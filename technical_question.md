@@ -58,5 +58,50 @@ direction RL
   N3 --> N4
 end
 
+subgraph S3[" "]
+direction LR
+  N5("Test
+  test in this order:
+  1. tes konsep. telusuri code mu seperti 
+  kamu akan di review secara detail
+  2. unusual or no-standard code 
+  3. hot spots, like arithmatic and null nodes
+  4. small test case, 
+  its much faster than a big test case
+  5. special case adn edge case
+  and when you find bugs, fix them carefully")
+  N6("Optimize 
+  walk through your brute force with BUD
+  optimization or try some of these ideas:
+  - look for unused info. you usually
+  need all the information in a problem 
+  - solve it manually on an example, then
+  reverse engineer your through process.
+  how do you solve it?
+  - make a time vs space tradeoff. 
+  hash tables are especially usefull")
+
+  N5 --> N6
+end
+
+subgraph S4[" "]
+direction RL
+  N7("walk through
+  now that you have an optimal solution, 
+  walk through your approach in detail. make sure 
+  you understand each detail before you start 
+  coding")
+  N8("implement 
+  your goal is to write beautiful code 
+  modularize your code from the 
+  beginning and refactor to clean up
+  anything that isn't beautiful")
+
+  N7 --> N8
+end
+
 S1 --> S2
+S2 --> S3
+S3 --> S4
 ```
+**Keep talking!** your interviewer wants to hear how you approach the problem
