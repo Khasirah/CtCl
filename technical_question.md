@@ -106,6 +106,81 @@ S3 --> S4
 ```
 **Keep talking!** your interviewer wants to hear how you approach the problem
 
+<<<<<<< HEAD
 ---
 
+=======
+## Optimize & solve technique #1: Look for BUD 
+- Bottleneck 
+- Unnecessary work 
+- Duplicated work
+
+#### Bottleneck 
+bottleneck adalah bagian dari algorima mu yang membuat lambat keseluruhan runtime. terdapat 2 kebiasaan yang dapat menyebabkannya muncul:
+1. terdapat satu pekerjaan yang membuat lambat algorima mu 
+> contoh: semisal km memiliki 2 step algoritma dimana yang pertama adalah  "*sort array*" dan kemudian menemukan elemen dengan properti tertentu
+>
+> langkah pertama: is O(N log N) <br/>
+> langkah kedua: O(N) <br/>
+> mungkn kamu bisa mengurangi langkah kedua dengan O(log N) atau O(1) tapi apakah itu berguna? tidak begitu banyak<br/>
+> bottleneck nya adalah langkah pertama O(N log N) <br/>
+> jadi kita harus melakukan optimalisasi pada langkat pertama, sampai itu terjadi *overall runtime* menjadi O(N log N)
+2. terdapat banyak pekerjaan atau fungsi (pada program seperti *for loop*), mungkin bisa dikurangi dari O(N) menjadi O(log N) atau bahkan O(1)
+
+> ### contoh kasus optimilisasi bottleneck
+> given an array of distinct integer values, count the number of pairs of integers that have difference k. for example, given the array {1, 7, 5, 9, 2, 12, ,3} and the difference k =2, there are four pairs with difference 2: (1, 3), (3,5), (5,7), (7,9)
+
+- brute force (pemikiran kasar) go through the array, starting form the first element
+- search through the remaining elements (which will form the other side of the pair). for each pair, compute the difference. if the difference equls k, increment a counter of the difference
+
+> disini terdapat bottleneck pada saat perulangan pencarian untuk "other side of the pair". yang perlu dilakukan optimalisasi
+>
+> bagaimana cara menemukan bagian kanannya? (x, ?) <br />
+> kita tau bahwa sisi bagian kanannya adalah x + n atau x - n ya kan <br/>
+> jika kita mengurutkan array nya maka kita bisa menmunkan bagian kanan untuk setiap elemen dengan runtime O(log N) dengan menggunakan "*binary search*"
+>
+> sekarang kita memiliki 2 langkah, dimana keduanya O(N log N) time. mengurutkan adalah bottleneck baru. bagaimana cara menemukan pasangan tanpa mengurutkan arraynya. <br/>
+> **dengan menggunakan "*hash table*" --> how can we find things quickly in an unsorted array?**
+>
+> pindahkan semua yang ada di dalam array ke hash table. kemudian, cari  `if x + k or x - k` exist di dalam array kita hanya perlu mencari pada hash table.
+>
+> dengan ini kecepatan algorima menjadi O(N)
+#### Unnecessary work 
+> contoh: print all positive integer solutions to the equation `a^3 + b^3 = c^3 + d^3` where a,b,c,d are integer between 1 and 1000
+
+solusi kasarnya adalah 4 "*for loop*", seperti berikut:
+```
+n = 1000 
+for a from 1 to n 
+  for b from 1 to n 
+    for c from 1 to n 
+      for d from 1 to n 
+        if a^3 + b^3 = c^3 + d^3 
+          print a,b,c,d 
+```
+terdpat Unnecessary work dalam pengecekan untuk kemungkinan d yang lain, hanya ada satu yang akan bekerja. **setidaknya kita harus "*break*" setelah kita menemukan valid solution**
+```
+n = 1000 
+for a from 1 to n 
+  for b from 1 to n 
+    for c from 1 to n 
+      for d from 1 to n 
+        if a^3 + b^3 = c^3 + d^3 
+          print a,b,c,d 
+          break // break out of d's loop
+```
+tidak akan banyak berdampak karena runtime tetap O(N<sup>4</sup>) tapi tetap bagus
+
+apakah terdapat Unnecessary work yang lain? yes, jika hanya terdapat satu nilai d yang valid untuk (a,b,c) maka kita bisa menjadikannya `d = (a^3 + b^3 - c^3)^1/3`
+```
+n = 1000 
+for a from 1 to n 
+  for b from 1 to n 
+    for c from 1 to n 
+      d = pow(a^3 + b^3 - c^3, 1/3) // will round to int 
+      if a^3 + b^3 = c^3 + d^3
+        print a,b,c,d
+```
+this will reduce our runtime from O(N<sup>4</sup>) to O(N<sup>3</sup>)
+>>>>>>> origin/main
 
