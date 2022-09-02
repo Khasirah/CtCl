@@ -1,6 +1,6 @@
 # Before The Interview
 ## getting the right experience
-without a great **resume**, there is **no** interview, without great **experience, there is no great **resume**.
+without a great **resume**, there is **no** interview, without great **experience**, there is no great **resume**.
 
 for current student, maybe can follow this:
   - take the big project classes
