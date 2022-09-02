@@ -38,4 +38,12 @@ add your experience level.
   - language: python (senior), javascript(mid level), etc
 ##### advice for non native english speakers and internationals
 some companies will throw your resume just because of a typo. please check again with native english speakers to proofed your resume.
+##### beware of (potential) stigma
+  - enterprise languages
+  - being to language focused: dont flaunt to a language
+  - certifitation
+  - knowing only one or two languages
 
+if your expertise in C#.NET, try to developing some project in Python adn JavaScript, if you only know one or two language, build some application in a different language. 
+
+it's better if you can learn language that are more different, like Python, C++, and Java 
